@@ -3,7 +3,6 @@
   width:40%;
 }
 #head{
-  margin-left:-5%;
   text-align: center;
   border: solid 2px gray;
   border-radius: 150px;
@@ -20,3 +19,4 @@ hr{
   margin-left:-5%;
   width:100%;
 }
+
