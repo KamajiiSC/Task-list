@@ -5,7 +5,7 @@ const list = document.querySelector("#list");
 const sort = document.querySelector("#sortInput");
 
 form.addEventListener('click', clickHandler);
-sort.addEventListener("keydown", keyHandler)
+sort.addEventListener("keyup", keyHandler)
 
 function clickHandler(e) { 
   if(e.target.id == "addBtn"){
@@ -48,5 +48,18 @@ function deleteTask(e){
 }
 
 function keyHandler(e){
-  
+  let sorting = e.target.value;
+  let c = list.children;
+
+  for(let i=0; i<c.length; i++){
+    let cString = c[i].textContent.substr(0, sorting.length);
+    
+    if(cString != sorting){
+      c[i].style.display = "none";
+    }
+    else{
+      c[i].style.display = "";
+    }
+
+  }
 }
