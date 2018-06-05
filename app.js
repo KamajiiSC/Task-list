@@ -16,7 +16,7 @@ function clickHandler(e) {
   else if(e.target.className == "delete"){
     deleteTask(e);
   }
-  
+
   e.preventDefault();
 }
 
@@ -38,7 +38,7 @@ function addTask(){
 function clearTasks(){
   let count = list.childElementCount;
   for(let i=0; i<=count; i++){
-    list.removeChild(list.childNodes[i]);
+    list.removeChild(list.childNodes[0]);
   }
 }
 function deleteTask(e){
