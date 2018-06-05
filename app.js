@@ -13,7 +13,10 @@ function clickHandler(e) {
   else if(e.target.id == "btnClear"){
     clearTasks();
   }
-
+  else if(e.target.className == "delete"){
+    deleteTask(e);
+  }
+  
   e.preventDefault();
 }
 
@@ -37,4 +40,8 @@ function clearTasks(){
   for(let i=0; i<=count; i++){
     list.removeChild(list.childNodes[i]);
   }
+}
+function deleteTask(e){
+  e.target.parentNode.id = 'marked';
+  e.target.parentNode.parentNode.removeChild(document.getElementById('marked'));
 }
