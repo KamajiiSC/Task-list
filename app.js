@@ -48,11 +48,11 @@ function deleteTask(e){
 }
 
 function keyHandler(e){
-  let sorting = e.target.value;
+  let sorting = e.target.value.toLowerCase();
   let c = list.children;
 
   for(let i=0; i<c.length; i++){
-    let cString = c[i].textContent.substr(0, sorting.length);
+    let cString = c[i].textContent.substr(0, sorting.length).toLowerCase();
     
     if(cString != sorting){
       c[i].style.display = "none";
@@ -60,6 +60,5 @@ function keyHandler(e){
     else{
       c[i].style.display = "";
     }
-
   }
 }
