@@ -6,17 +6,35 @@ const list = document.querySelector("#list");
 
 form.addEventListener('click', clickHandler);
 
-function clickHandler(e) {
-  let loadTask
+function clickHandler(e) { 
   if(e.target.id == "addBtn"){
+    addTask();
+  }
+  else if(e.target.id == "btnClear"){
+    clearTasks();
+  }
+
+  e.preventDefault();
+}
+
+function addTask(){
+  let loadTask
+  if(task.value == ""){
+    alert("Please enter a task");
+  }
+  else{
     loadTask = task.value;
     console.log(loadTask);
     let li = document.createElement("li");
-    li.id = 'list';
-    li.innerHTML = `${loadTask} <a align='right' href='#'>&#10007;</a>`;
+    li.id = 'listItem';
+    li.innerHTML = `${loadTask} <a class='delete' align='right' href='#'>&#10007;</a>`;
     list.appendChild(li);
     task.value = "";
   }
-  
-  e.preventDefault();
+}
+function clearTasks(){
+  let count = list.childElementCount;
+  for(let i=0; i<=count; i++){
+    list.removeChild(list.childNodes[i]);
+  }
 }
