@@ -2,9 +2,10 @@ const form = document.querySelector("#pageForm");
 const task = document.querySelector("#taskInput");
 const taskBtn = document.querySelector("#addBtn");
 const list = document.querySelector("#list");
-
+const sort = document.querySelector("#sortInput");
 
 form.addEventListener('click', clickHandler);
+sort.addEventListener("keydown", keyHandler)
 
 function clickHandler(e) { 
   if(e.target.id == "addBtn"){
@@ -44,4 +45,8 @@ function clearTasks(){
 function deleteTask(e){
   e.target.parentNode.id = 'marked';
   e.target.parentNode.parentNode.removeChild(document.getElementById('marked'));
+}
+
+function keyHandler(e){
+  
 }
